@@ -19,6 +19,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var nextNumber = 0
+    
+    @IBOutlet var numberLabel: UILabel!
+    
+    @IBAction func incrementLabelNumber(_sender: AnyObject) {
+        nextNumber += 1
+        numberLabel.text = "\(nextNumber)"
+    }
 
 
 }
