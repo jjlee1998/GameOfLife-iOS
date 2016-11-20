@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,31 +22,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-kC-HOD">
-                                <frame key="frameInset" minX="189" minY="273" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Good afternoon!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-zE-z3K">
+                                <rect key="frame" x="278" y="637" width="86" height="30"/>
+                                <state key="normal" title="Load Colony"/>
                                 <connections>
-                                    <action selector="incrementLabelNumberWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZ5-RK-ALO"/>
+                                    <segue destination="gNJ-32-ROI" kind="show" identifier="ShowColony" id="RUn-0M-0JZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cE-4G-AL7">
-                                <frame key="frameInset" minX="211" minY="156" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yq-FS-awD">
+                                <rect key="frame" x="8" y="637" width="83" height="30"/>
+                                <state key="normal" title="New Colony"/>
+                                <connections>
+                                    <segue destination="o3G-3v-Rvj" kind="show" identifier="ShowCreator" id="tSY-98-gSY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Yq-FS-awD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="07A-9w-kfH"/>
+                            <constraint firstItem="1gt-zE-z3K" firstAttribute="baseline" secondItem="0Yq-FS-awD" secondAttribute="baseline" id="73s-8d-x9w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1gt-zE-z3K" secondAttribute="trailing" constant="-5" id="FBk-iF-3FR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Yq-FS-awD" secondAttribute="bottom" id="Z6e-Ct-pfA"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="numberLabel" destination="7cE-4G-AL7" id="Goh-Xn-Ag3"/>
+                        <outlet property="loadColonyButton" destination="1gt-zE-z3K" id="8zi-Qf-GmU"/>
+                        <outlet property="newColonyButton" destination="0Yq-FS-awD" id="RPN-Il-9Qo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="774" y="97"/>
+            <point key="canvasLocation" x="773.60000000000002" y="96.7016491754123"/>
+        </scene>
+        <!--Creation View Controller-->
+        <scene sceneID="had-5j-ZDR">
+            <objects>
+                <viewController id="o3G-3v-Rvj" customClass="CreationViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Hd-2i-87L"/>
+                        <viewControllerLayoutGuide type="bottom" id="QQ9-Q2-H0W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pNG-a0-aeB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnt-cD-NBC">
+                                <rect key="frame" x="0.0" y="637" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ReturnToMain" id="wTh-w4-YjT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cec-5T-btv">
+                                <rect key="frame" x="268" y="637" width="107" height="30"/>
+                                <state key="normal" title="Create Colony"/>
+                                <connections>
+                                    <segue destination="gNJ-32-ROI" kind="show" identifier="ShowColony" id="skc-uW-fpM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cec-5T-btv" secondAttribute="trailing" constant="-8" id="rFe-ey-QVB"/>
+                            <constraint firstItem="QQ9-Q2-H0W" firstAttribute="top" secondItem="nnt-cD-NBC" secondAttribute="bottom" id="uSq-YC-FhT"/>
+                            <constraint firstItem="nnt-cD-NBC" firstAttribute="leading" secondItem="pNG-a0-aeB" secondAttribute="leading" constant="8" id="x3p-Ft-vvn"/>
+                            <constraint firstItem="QQ9-Q2-H0W" firstAttribute="top" secondItem="cec-5T-btv" secondAttribute="bottom" id="ybO-uO-krr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="nnt-cD-NBC" id="HOo-xt-KaA"/>
+                        <outlet property="createColonyButton" destination="cec-5T-btv" id="LmZ-Fr-ROe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNK-R0-eiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="97"/>
+        </scene>
+        <!--Colony View Controller-->
+        <scene sceneID="iUZ-WF-caj">
+            <objects>
+                <viewController id="gNJ-32-ROI" customClass="ColonyViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HIC-ct-OGi"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6f-RQ-NfK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kN1-GM-Yz0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D18-eE-Fxd">
+                                <rect key="frame" x="0.0" y="637" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ReturnToMain" id="c99-Uf-eca"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b6f-RQ-NfK" firstAttribute="top" secondItem="D18-eE-Fxd" secondAttribute="bottom" id="QcX-mB-SXC"/>
+                            <constraint firstItem="D18-eE-Fxd" firstAttribute="leading" secondItem="kN1-GM-Yz0" secondAttribute="leading" constant="8" id="aWU-VC-nUR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="D18-eE-Fxd" id="uqL-Cx-Nho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KHF-Er-fTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="921"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wTh-w4-YjT"/>
+        <segue reference="RUn-0M-0JZ"/>
+    </inferredMetricsTieBreakers>
 </document>

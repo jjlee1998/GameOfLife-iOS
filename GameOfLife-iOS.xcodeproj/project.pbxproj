@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A409B0561DE219DC00B6288B /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409B0551DE219DC00B6288B /* CreationViewController.swift */; };
+		A409B0581DE21B2800B6288B /* ColonyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409B0571DE21B2800B6288B /* ColonyViewController.swift */; };
 		FBD3EE3C1DDC136100B9F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */; };
 		FBD3EE3E1DDC136100B9F203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3EE3D1DDC136100B9F203 /* ViewController.swift */; };
 		FBD3EE411DDC136100B9F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD3EE3F1DDC136100B9F203 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A409B0551DE219DC00B6288B /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		A409B0571DE21B2800B6288B /* ColonyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyViewController.swift; sourceTree = "<group>"; };
 		FBD3EE381DDC136100B9F203 /* GameOfLife-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameOfLife-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD3EE3D1DDC136100B9F203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
 				FBD3EE3D1DDC136100B9F203 /* ViewController.swift */,
 				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
+				A409B0571DE21B2800B6288B /* ColonyViewController.swift */,
+				A409B0551DE219DC00B6288B /* CreationViewController.swift */,
 				FBD3EE421DDC136100B9F203 /* Assets.xcassets */,
 				FBD3EE441DDC136100B9F203 /* LaunchScreen.storyboard */,
 				FBD3EE471DDC136100B9F203 /* Info.plist */,
@@ -91,7 +97,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Jonathan J. Lee";
 				TargetAttributes = {
 					FBD3EE371DDC136100B9F203 = {
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A409B0581DE21B2800B6288B /* ColonyViewController.swift in Sources */,
 				FBD3EE3E1DDC136100B9F203 /* ViewController.swift in Sources */,
 				FBD3EE3C1DDC136100B9F203 /* AppDelegate.swift in Sources */,
+				A409B0561DE219DC00B6288B /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +189,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +240,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -301,6 +311,7 @@
 				FBD3EE4C1DDC136100B9F203 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
