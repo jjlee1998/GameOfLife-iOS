@@ -1,200 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-SF-QOO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Detail View Controller-->
+        <scene sceneID="Vuz-ET-vRa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aOi-y0-eMT" customClass="DetailViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="3Dw-83-8En"/>
+                        <viewControllerLayoutGuide type="bottom" id="MQV-l3-WGk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <view key="view" contentMode="scaleToFill" id="5hP-xC-Hhb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-zE-z3K">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Load Colony"/>
-                                <connections>
-                                    <segue destination="gNJ-32-ROI" kind="show" identifier="ShowColony" id="RUn-0M-0JZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yq-FS-awD">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="New Colony"/>
-                                <connections>
-                                    <segue destination="o3G-3v-Rvj" kind="show" identifier="ShowCreator" id="tSY-98-gSY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="0Yq-FS-awD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="07A-9w-kfH"/>
-                            <constraint firstItem="1gt-zE-z3K" firstAttribute="baseline" secondItem="0Yq-FS-awD" secondAttribute="baseline" id="73s-8d-x9w"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1gt-zE-z3K" secondAttribute="trailing" constant="-8" id="FBk-iF-3FR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Yq-FS-awD" secondAttribute="bottom" id="Z6e-Ct-pfA"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="loadColonyButton" destination="1gt-zE-z3K" id="8zi-Qf-GmU"/>
-                        <outlet property="newColonyButton" destination="0Yq-FS-awD" id="RPN-Il-9Qo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="96.7016491754123"/>
-        </scene>
-        <!--Creation View Controller-->
-        <scene sceneID="had-5j-ZDR">
-            <objects>
-                <viewController id="o3G-3v-Rvj" customClass="CreationViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Hd-2i-87L"/>
-                        <viewControllerLayoutGuide type="bottom" id="QQ9-Q2-H0W"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pNG-a0-aeB">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnt-cD-NBC">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ReturnToMain" id="wTh-w4-YjT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cec-5T-btv">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Create Colony"/>
-                                <connections>
-                                    <segue destination="gNJ-32-ROI" kind="show" identifier="ShowColony" id="skc-uW-fpM"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cec-5T-btv" secondAttribute="trailing" constant="8" id="Vs1-CQ-0Yn"/>
-                            <constraint firstItem="QQ9-Q2-H0W" firstAttribute="top" secondItem="nnt-cD-NBC" secondAttribute="bottom" id="uSq-YC-FhT"/>
-                            <constraint firstItem="nnt-cD-NBC" firstAttribute="leading" secondItem="pNG-a0-aeB" secondAttribute="leading" constant="8" id="x3p-Ft-vvn"/>
-                            <constraint firstItem="QQ9-Q2-H0W" firstAttribute="top" secondItem="cec-5T-btv" secondAttribute="bottom" id="ybO-uO-krr"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="nnt-cD-NBC" id="HOo-xt-KaA"/>
-                        <outlet property="createColonyButton" destination="cec-5T-btv" id="LmZ-Fr-ROe"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kNK-R0-eiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDq-vx-fWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="97"/>
+            <point key="canvasLocation" x="1027" y="1176"/>
         </scene>
-        <!--Colony View Controller-->
-        <scene sceneID="iUZ-WF-caj">
+        <!--Root View Controller-->
+        <scene sceneID="wqU-zx-0Bv">
             <objects>
-                <viewController id="gNJ-32-ROI" customClass="ColonyViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HIC-ct-OGi"/>
-                        <viewControllerLayoutGuide type="bottom" id="b6f-RQ-NfK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kN1-GM-Yz0">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="CsD-UM-ZDw" customClass="MasterViewController" customModule="GameOfLife_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lUl-qb-dTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Vn-Tr-euS">
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0el-u6-KnP">
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5b-9A-HA4">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Exit"/>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ReturnToMain" id="ljf-ZP-IWU"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colony Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atv-oe-CsB">
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltm-k5-i1C" userLabel="Generation Stack View">
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Generation #" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHg-cb-PPh">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hb-3q-jDb">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-c6-sEp" userLabel="Wrapping Stack View">
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="750" text="Wrapping:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDd-CY-U2e">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjd-2d-3Q0"/>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fM-Di-2hS" userLabel="EvRate Stack View">
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Evolution Rate:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky6-xp-ZpT">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-bz-vCd">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-1M-Ecw">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lQv-cZ-rQH"/>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="ace-CT-yub">
-                                        <color key="backgroundColor" red="0.66355650906735753" green="0.66355650906735753" blue="0.66355650906735753" alpha="0.51961377640845074" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ace-CT-yub" secondAttribute="height" multiplier="1:1" id="YQL-Yp-c5O"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3Vn-Tr-euS" firstAttribute="leading" secondItem="kN1-GM-Yz0" secondAttribute="leadingMargin" id="GQ7-dK-xmo"/>
-                            <constraint firstItem="3Vn-Tr-euS" firstAttribute="top" secondItem="HIC-ct-OGi" secondAttribute="bottom" constant="8" id="RZR-JO-1h9"/>
-                            <constraint firstItem="b6f-RQ-NfK" firstAttribute="top" secondItem="3Vn-Tr-euS" secondAttribute="bottom" constant="8" id="aKy-1L-wQI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3Vn-Tr-euS" secondAttribute="trailing" id="cXT-EV-5te"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KHF-Er-fTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="dPN-rT-4je" style="IBUITableViewCellStyleDefault" id="YS3-DE-juF">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YS3-DE-juF" id="zr0-cr-URc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPN-rT-4je">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CsD-UM-ZDw" id="adt-hl-IID"/>
+                            <outlet property="delegate" destination="CsD-UM-ZDw" id="LFR-ip-hih"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="0zD-V3-vjO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3N-Zu-44K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.6222547584186" y="920.50781249999989"/>
+            <point key="canvasLocation" x="1978" y="521"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yz2-nw-F6p">
+            <objects>
+                <navigationController id="AVN-U9-ihd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SW5-Nd-I4O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CsD-UM-ZDw" kind="relationship" relationship="rootViewController" id="eb2-Ll-CqY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ve-TE-VXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="521"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="BNK-dO-yz3">
+            <objects>
+                <splitViewController id="D7j-SF-QOO" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="AVN-U9-ihd" kind="relationship" relationship="masterViewController" id="jrE-v6-EjT"/>
+                        <segue destination="aOi-y0-eMT" kind="relationship" relationship="detailViewController" id="iO1-Tc-NjH"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFX-Bf-BZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="850"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ljf-ZP-IWU"/>
-        <segue reference="RUn-0M-0JZ"/>
-    </inferredMetricsTieBreakers>
 </document>
