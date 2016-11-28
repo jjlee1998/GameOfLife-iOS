@@ -10,6 +10,6 @@ import UIKit
 
 class ColonyViewController: UIViewController {
     
-    
+    //we might not need this, detailviewcontroller might handle the rest of the colony
     
 }
