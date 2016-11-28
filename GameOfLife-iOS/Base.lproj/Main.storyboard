@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +21,49 @@
                     <view key="view" contentMode="scaleToFill" id="5hP-xC-Hhb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-Aj-Mej">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOF-cA-9JC">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="616"/>
+                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-ZO-En4">
+                                        <rect key="frame" x="0.0" y="616" width="343" height="31"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aDy-MH-e6E">
+                                                <rect key="frame" x="-2" y="0.0" width="314" height="32"/>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xym-qI-LFB">
+                                                <rect key="frame" x="310" y="0.0" width="0.0" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IY-yg-cPA">
+                                                <rect key="frame" x="310" y="0.0" width="35" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MnG-ZO-En4" firstAttribute="leading" secondItem="zwg-Aj-Mej" secondAttribute="leading" id="2mF-EE-7YU"/>
+                                    <constraint firstAttribute="trailing" secondItem="MnG-ZO-En4" secondAttribute="trailing" id="E9Q-w5-iP0"/>
+                                    <constraint firstAttribute="bottom" secondItem="MnG-ZO-En4" secondAttribute="bottom" id="L5S-wo-Iwh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zwg-Aj-Mej" secondAttribute="trailing" id="6fm-aE-IzC"/>
+                            <constraint firstItem="MQV-l3-WGk" firstAttribute="top" secondItem="zwg-Aj-Mej" secondAttribute="bottom" id="IR7-fS-yzO"/>
+                            <constraint firstItem="zwg-Aj-Mej" firstAttribute="top" secondItem="3Dw-83-8En" secondAttribute="bottom" id="WC9-er-NCU"/>
+                            <constraint firstItem="zwg-Aj-Mej" firstAttribute="leading" secondItem="5hP-xC-Hhb" secondAttribute="leadingMargin" id="fNr-qF-f2O"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDq-vx-fWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="1176"/>
+            <point key="canvasLocation" x="1026.4000000000001" y="1175.2623688155923"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="wqU-zx-0Bv">
@@ -40,11 +78,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YS3-DE-juF" id="zr0-cr-URc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPN-rT-4je">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
