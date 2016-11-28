@@ -10,6 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    
+    //use this view controller to build the colony view and controls
     
 }
