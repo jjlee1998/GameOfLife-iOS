@@ -11,20 +11,33 @@ import UIKit
 class DetailViewController: UIViewController {
     
     //use this view controller to build the controls and colony view
-    @IBOutlet var colonyView: UIView!
-    
-    @IBOutlet var startButton: UIButton!
-    @IBOutlet var evoSpeedSlider: UISlider!
-    @IBOutlet var evoSpeedDisplay: UILabel!
-    @IBOutlet var wrappingToggle: UISwitch!
+    @IBOutlet var colonyView: ColonyView!
     
     var currentColony: Colony! {
-        didSet (newColony) {
-            self.refreshUI()
+        didSet {
+            colonyView.setColony(currentColony)
         }
     }
     
-    func refreshUI() {
-        //set colony view to display new colony
+    @IBAction func evolveColony(sender: AnyObject) {
+        currentColony.evolve()
+        colonyView.setNeedsDisplay()
+        print("hullo")
+    }
+    
+    override func viewDidLoad() {
+        currentColony = Colony(name: "testColony", size: 60)
+        
+        //Add a few values to make the colony visible for testing
+        var addOne = true
+        for x in 0..<60 {
+            addOne = !addOne
+            for y in 0..<60 {
+                if addOne {
+                    currentColony.setCellAlive(x, y)
+                }
+                addOne = !addOne
+            }
+        }
     }
 }

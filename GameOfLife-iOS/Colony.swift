@@ -10,9 +10,15 @@ import UIKit
 
 class Colony: CustomStringConvertible {
     
-    var size = 20
+    var name: String
+    var size: Int
     var livingCells = Set<Cell>()
     var generationNumber = 0
+    
+    init(name: String, size: Int) {
+        self.name = name
+        self.size = size
+    }
     
     func isGoodCell(_ cell: Cell) -> Bool {
         if (cell.x < size) && (0 <= cell.x) && (cell.y < size) && (0 <= cell.y) {

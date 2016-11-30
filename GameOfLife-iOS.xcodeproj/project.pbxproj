@@ -64,9 +64,9 @@
 			children = (
 				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
 				A42078A71DEB4F1200B54A68 /* MasterViewController.swift */,
+				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
 				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A468DB5E1DECA07600B3B5DE /* ColonyView.swift */,
-				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
 				FB49F8E51DEE672200FC5002 /* Colony.swift */,
 				FB49F8E71DEE673900FC5002 /* Cell.swift */,
 				FBD3EE421DDC136100B9F203 /* Assets.xcassets */,

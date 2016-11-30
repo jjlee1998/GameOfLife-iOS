@@ -14,9 +14,9 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         //testing colonies go here until creation gets built
-        let c0 = Colony(name: "Colony 0", maxWidth: 20, maxHeight: 20)
-        let c1 = Colony(name: "Colony 1", maxWidth: 20, maxHeight: 20)
-        let c2 = Colony(name: "Colony 2", maxWidth: 20, maxHeight: 20)
+        let c0 = Colony(name: "Colony 0", size: 20)
+        let c1 = Colony(name: "Colony 1", size: 20)
+        let c2 = Colony(name: "Colony 2", size: 20)
         colonies.append(c0)
         colonies.append(c1)
         colonies.append(c2)
@@ -34,7 +34,7 @@ class MasterViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
         
             let colony = self.colonies[indexPath.row]
-            cell.textLabel?.text = colony.cName
+            cell.textLabel?.text = colony.name
         
             return cell
     }
