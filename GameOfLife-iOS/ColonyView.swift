@@ -16,9 +16,13 @@ class ColonyView: UIView {
     var multiplier: CGFloat!
     var sideLength: CGFloat!
     
+    var drawAlive = true
+    
     func setColony(_ colony: Colony) {
         self.colony = colony
     }
+    
+    ///////////////////////// Evolution Rendering
     
     override func draw(_ rect: CGRect) {
         calculateSystemDims()

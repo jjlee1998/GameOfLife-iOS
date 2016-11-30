@@ -12,6 +12,7 @@
 		A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468DB5E1DECA07600B3B5DE /* ColonyView.swift */; };
 		FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E51DEE672200FC5002 /* Colony.swift */; };
 		FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E71DEE673900FC5002 /* Cell.swift */; };
+		FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */; };
 		FBD3EE3C1DDC136100B9F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */; };
 		FBD3EE411DDC136100B9F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD3EE3F1DDC136100B9F203 /* Main.storyboard */; };
 		FBD3EE431DDC136100B9F203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3EE421DDC136100B9F203 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		A468DB5E1DECA07600B3B5DE /* ColonyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyView.swift; sourceTree = "<group>"; };
 		FB49F8E51DEE672200FC5002 /* Colony.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		FB49F8E71DEE673900FC5002 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyViewTouchHandling.swift; sourceTree = "<group>"; };
 		FBD3EE381DDC136100B9F203 /* GameOfLife-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameOfLife-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD3EE401DDC136100B9F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
 				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A468DB5E1DECA07600B3B5DE /* ColonyView.swift */,
+				FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */,
 				FB49F8E51DEE672200FC5002 /* Colony.swift */,
 				FB49F8E71DEE673900FC5002 /* Cell.swift */,
 				FBD3EE421DDC136100B9F203 /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				A42078A81DEB4F1200B54A68 /* MasterViewController.swift in Sources */,
 				FBD3EE3C1DDC136100B9F203 /* AppDelegate.swift in Sources */,
 				FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */,
+				FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */,
 				A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */,
 				A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */,
 				FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */,
