@@ -80,6 +80,18 @@ class Colony: CustomStringConvertible {
         }
     }
     
+    func randomize() {
+        var add = true
+        for x in 0..<size {
+            for y in 0..<size {
+                if add {
+                    setCellAlive(x, y)
+                }
+                add = (arc4random_uniform(2) == 1)
+            }
+        }
+    }
+    
     var description: String {
         var result = "Generation # \(generationNumber)\n"
         for xCoor in 0..<size {

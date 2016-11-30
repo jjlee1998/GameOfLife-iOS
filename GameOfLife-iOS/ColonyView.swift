@@ -20,6 +20,7 @@ class ColonyView: UIView {
     
     func setColony(_ colony: Colony) {
         self.colony = colony
+        self.setNeedsDisplay()
     }
     
     ///////////////////////// Evolution Rendering

@@ -8,15 +8,26 @@
 
 import UIKit
 
+protocol ColonySelectionDelegate: class {
+    func colonySelected(newColony: Colony)
+}
+
 class MasterViewController: UITableViewController {
     
     var colonies = [Colony]()
+    var delegate: ColonySelectionDelegate?
     
     override func viewDidLoad() {
         //testing colonies go here until creation gets built
         let c0 = Colony(name: "Colony 0", size: 20)
+        c0.randomize()
+        
         let c1 = Colony(name: "Colony 1", size: 20)
+        c1.randomize()
+        
         let c2 = Colony(name: "Colony 2", size: 20)
+        c2.randomize()
+        
         colonies.append(c0)
         colonies.append(c1)
         colonies.append(c2)
@@ -28,6 +39,11 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.colonies.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let colony = self.colonies[indexPath.row]
+        self.delegate?.colonySelected(newColony: colony)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, ColonySelectionDelegate {
     
     //use this view controller to build the controls and colony view
     @IBOutlet var colonyView: ColonyView!
@@ -24,18 +24,11 @@ class DetailViewController: UIViewController {
         colonyView.setNeedsDisplay()
     }
     
+    func colonySelected(newColony: Colony) {
+        currentColony = newColony
+    }
+    
     override func viewDidLoad() {
-        currentColony = Colony(name: "testColony", size: 60)
-        
-        //Add a few random values to make the colony visible for testing
-        var add = true
-        for x in 0..<60 {
-            for y in 0..<60 {
-                if add {
-                    currentColony.setCellAlive(x, y)
-                }
-                add = (arc4random_uniform(2) == 1)
-            }
-        }
+        currentColony = Colony(name: "blankColony", size: 60)
     }
 }
