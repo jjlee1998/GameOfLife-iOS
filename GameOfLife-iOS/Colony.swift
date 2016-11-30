@@ -54,7 +54,6 @@ class Colony: CustomStringConvertible {
             .filter({aliveNextGen($0)})
             .filter({isGoodCell($0)})
         livingCells = Set<Cell>(newCells)
-        
     }
     
     func cellsSurrounding(_ cell: Cell) -> Set<Cell> {

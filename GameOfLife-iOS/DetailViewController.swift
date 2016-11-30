@@ -22,21 +22,19 @@ class DetailViewController: UIViewController {
     @IBAction func evolveColony(sender: AnyObject) {
         currentColony.evolve()
         colonyView.setNeedsDisplay()
-        print("hullo")
     }
     
     override func viewDidLoad() {
         currentColony = Colony(name: "testColony", size: 60)
         
-        //Add a few values to make the colony visible for testing
-        var addOne = true
+        //Add a few random values to make the colony visible for testing
+        var add = true
         for x in 0..<60 {
-            addOne = !addOne
             for y in 0..<60 {
-                if addOne {
+                if add {
                     currentColony.setCellAlive(x, y)
                 }
-                addOne = !addOne
+                add = (arc4random_uniform(2) == 1)
             }
         }
     }
