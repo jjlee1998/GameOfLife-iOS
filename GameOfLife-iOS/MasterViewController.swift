@@ -19,13 +19,13 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         //testing colonies go here until creation gets built
-        let c0 = Colony(name: "Colony 0", size: 20)
+        let c0 = Colony(name: "Colony 0", size: 60)
         c0.randomize()
         
-        let c1 = Colony(name: "Colony 1", size: 20)
+        let c1 = Colony(name: "Colony 1", size: 60)
         c1.randomize()
         
-        let c2 = Colony(name: "Colony 2", size: 20)
+        let c2 = Colony(name: "Colony 2", size: 60)
         c2.randomize()
         
         colonies.append(c0)

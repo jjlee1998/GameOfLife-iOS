@@ -53,10 +53,10 @@ class ColonyView: UIView {
     
     func drawTerritory() {
         
-        let outerBorder = UIBezierPath(rect: CGRect(x: cOrigin.x - (2 * multiplier),
-                                                    y: cOrigin.y - (2 * multiplier),
-                                                    width: sideLength + (4 * multiplier),
-                                                    height: sideLength + (4 * multiplier)))
+        let outerBorder = UIBezierPath(rect: CGRect(x: cOrigin.x - (1.5 * multiplier),
+                                                    y: cOrigin.y - (1.5 * multiplier),
+                                                    width: sideLength + (3 * multiplier),
+                                                    height: sideLength + (3 * multiplier)))
         let innerBorder = UIBezierPath(rect: CGRect(origin: cOrigin, size: CGSize(width: sideLength, height: sideLength)))
         // Steel Blue
         UIColor(red:0.45, green:0.53, blue:0.65, alpha:1.0).setFill()

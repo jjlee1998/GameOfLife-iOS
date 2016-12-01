@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-SF-QOO">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-SF-QOO">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,9 +34,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wH-09-yvM">
                                                 <rect key="frame" x="0.0" y="0.0" width="663" height="30"/>
-                                                <state key="normal" title="Evolve Once"/>
+                                                <state key="normal" title="Evolve"/>
                                                 <connections>
-                                                    <action selector="evolveColonyWithSender:" destination="aOi-y0-eMT" eventType="touchUpInside" id="2ej-ZG-tkY"/>
+                                                    <action selector="toggleEvolution:" destination="aOi-y0-eMT" eventType="touchUpInside" id="dvR-eR-LWB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
