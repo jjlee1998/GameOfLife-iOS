@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Cell: Hashable {
+struct Cell: Hashable, CustomStringConvertible {
     
     var x: Int
     var y: Int
@@ -22,5 +22,9 @@ struct Cell: Hashable {
     
     static func == (firstCell: Cell, secondCell: Cell) -> Bool {
         return firstCell.hashValue == secondCell.hashValue
+    }
+    
+    var description: String {
+        return "(\(x), \(y))"
     }
 }

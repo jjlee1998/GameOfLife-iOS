@@ -14,6 +14,7 @@ class Colony: CustomStringConvertible {
     var size: Int
     var livingCells = Set<Cell>()
     var generationNumber = 0
+    var wrapping = false
     
     init(name: String, size: Int) {
         self.name = name
@@ -44,6 +45,14 @@ class Colony: CustomStringConvertible {
         generationNumber = 0
     }
     
+    func wrappingOn() {
+        wrapping = true
+    }
+    
+    func wrappingOff() {
+        wrapping = false
+    }
+    
     func isCellAlive(_ xCoor: Int, _ yCoor: Int) -> Bool {
         return livingCells.contains(Cell(xCoor, yCoor))
     }
@@ -60,13 +69,35 @@ class Colony: CustomStringConvertible {
         var result = Set<Cell>()
         for x in cell.x - 1 ... cell.x + 1 {
             for y in cell.y - 1 ... cell.y + 1 {
-                result.insert(Cell(x, y))
+                if wrapping && !isGoodCell(Cell(x, y)) {
+                    if let wrappedCell = wrappedCell(Cell(x, y)) {
+                        result.insert(wrappedCell)
+                    }
+                } else {
+                    result.insert(Cell(x, y))
+                }
             }
         }
         return result
     }
     
+    func wrappedCell(_ cell: Cell) -> Cell? {
+        // If the cell is out of bounds in both dimensions, throw it out
+        if (cell.x < 0 || cell.x >= size) && (cell.y < 0 || cell.y >= size) {
+            return nil
+        } else {
+            switch (cell.x, cell.y) {
+            case (-1, let y): return Cell(size - 1, y)
+            case (size, let y): return Cell(0, y)
+            case (let x, -1): return Cell(x, size - 1)
+            case (let x, size): return Cell(x, 0)
+            default: return nil
+            }
+        }
+    }
+    
     func aliveNextGen(_ cell: Cell) -> Bool{
+        
         var surroundingCells = cellsSurrounding(cell)
         surroundingCells.formIntersection(livingCells)
         surroundingCells.remove(cell)
@@ -94,8 +125,8 @@ class Colony: CustomStringConvertible {
     
     var description: String {
         var result = "Generation # \(generationNumber)\n"
-        for xCoor in 0..<size {
-            for yCoor in 0..<size {
+        for xCoor in -1...size {
+            for yCoor in -1...size {
                 if isCellAlive(xCoor, yCoor) {
                     result += "*"
                 } else {
