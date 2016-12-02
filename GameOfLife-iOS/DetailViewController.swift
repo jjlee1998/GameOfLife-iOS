@@ -13,9 +13,14 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     //use this view controller to build the controls and colony view
     @IBOutlet var colonyView: ColonyView!
     
+    @IBOutlet var colonyNameLabel: UILabel!
+    @IBOutlet var generationNumberLabel: UILabel!
+    
     var currentColony: Colony! {
         didSet {
             colonyView.setColony(currentColony)
+            colonyNameLabel.text = currentColony.name
+            generationNumberLabel.text = currentColony.generationNumber.description
         }
     }
     
@@ -27,19 +32,21 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
         
         if !evolveOn {
             evolveOn = true
-            evolveColony()
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(DetailViewController.evolveColony), userInfo: nil, repeats: true)
-            button.titleLabel?.text = "Stop"
+            button.setTitle("Stop Evolving", for: .normal)
+            button.setTitleColor(UIColor.red, for: .normal)
         } else {
             timer.invalidate()
             evolveOn = false
-            button.titleLabel?.text = "Start"
+            button.setTitle("Start Evolving", for: .normal)
+            button.setTitleColor(UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0), for: .normal)
         }
     }
     
     func evolveColony() {
         currentColony.evolve()
         colonyView.setNeedsDisplay()
+        generationNumberLabel.text = currentColony.generationNumber.description
     }
     
     
