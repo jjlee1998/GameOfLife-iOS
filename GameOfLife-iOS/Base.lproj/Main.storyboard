@@ -36,37 +36,40 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Generation #" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRJ-w0-l11">
-                                                <rect key="frame" x="102.5" y="0.0" width="261.5" height="20.5"/>
+                                                <rect key="frame" x="102.5" y="0.0" width="549.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-d3-piU">
-                                                <rect key="frame" x="364" y="0.0" width="260.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="(x, y)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoE-cw-aVM">
-                                                <rect key="frame" x="624.5" y="0.0" width="38" height="20.5"/>
+                                                <rect key="frame" x="652" y="0.0" width="10.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="BfN-d3-piU" firstAttribute="width" secondItem="lRJ-w0-l11" secondAttribute="width" id="ycm-ri-he6"/>
-                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="TOF-cA-9JC">
                                         <rect key="frame" x="0.0" y="30.5" width="662.5" height="576.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-VX-Spd" customClass="ColonyView" customModule="GameOfLife_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="74" y="30" width="516.5" height="516.5"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" fixedFrame="YES" text="[x, y]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoE-cw-aVM">
+                                                        <rect key="frame" x="153" y="141" width="94" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="N5C-VX-Spd" secondAttribute="height" multiplier="1:1" id="5ov-Mo-jPC"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="coordinatePopup" destination="VoE-cw-aVM" id="2TN-au-dF8"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.46883637866823574" green="0.60148067555789952" blue="0.89683936236411665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

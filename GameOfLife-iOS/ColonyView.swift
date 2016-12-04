@@ -11,6 +11,8 @@ import CoreGraphics
 
 class ColonyView: UIView {
     
+    @IBOutlet var coordinatePopup: UILabel!
+    
     var colony: Colony!
     var multiplier: CGFloat!
     var drawAlive = true
