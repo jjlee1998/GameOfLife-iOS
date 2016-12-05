@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController, ColonySelectionDelegate {
     
     @IBOutlet var colonyView: ColonyView! // Use this view controller to build the controls and colony view
+    @IBOutlet var evolutionButton: UIButton!
     @IBOutlet var colonyNameLabel: UILabel!
     @IBOutlet var generationNumberLabel: UILabel!
     @IBOutlet var slider: UISlider!
@@ -88,9 +89,12 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     
     func colonySelected(newColony: Colony) {
         currentColony = newColony
+        if evolveOn {
+            toggleEvolution(evolutionButton)
+        }
     }
     
     override func viewDidLoad() {
-        currentColony = Colony(name: "blankColony", size: 60)
+        currentColony = Colony(name: "Default", size: 60)
     }
 }

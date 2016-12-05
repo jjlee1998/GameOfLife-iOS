@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A42078A81DEB4F1200B54A68 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42078A71DEB4F1200B54A68 /* MasterViewController.swift */; };
 		A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */; };
 		A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468DB5E1DECA07600B3B5DE /* ColonyView.swift */; };
+		A4DDFBC01DF5D1B9008175E0 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */; };
+		A4DDFBC11DF5D1B9008175E0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */; };
+		A4DDFBC31DF5D1F5008175E0 /* ColonyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */; };
 		FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E51DEE672200FC5002 /* Colony.swift */; };
 		FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E71DEE673900FC5002 /* Cell.swift */; };
 		FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */; };
@@ -20,9 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A42078A71DEB4F1200B54A68 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A468DB5E1DECA07600B3B5DE /* ColonyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyView.swift; sourceTree = "<group>"; };
+		A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreationViewController.swift; path = ../../../CreationViewController.swift; sourceTree = "<group>"; };
+		A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = ../../../MasterViewController.swift; sourceTree = "<group>"; };
+		A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColonyTableViewCell.swift; path = ../../../ColonyTableViewCell.swift; sourceTree = "<group>"; };
 		FB49F8E51DEE672200FC5002 /* Colony.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		FB49F8E71DEE673900FC5002 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyViewTouchHandling.swift; sourceTree = "<group>"; };
@@ -64,8 +68,10 @@
 		FBD3EE3A1DDC136100B9F203 /* GameOfLife-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */,
+				A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */,
+				A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */,
 				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
-				A42078A71DEB4F1200B54A68 /* MasterViewController.swift */,
 				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
 				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A468DB5E1DECA07600B3B5DE /* ColonyView.swift */,
@@ -151,10 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42078A81DEB4F1200B54A68 /* MasterViewController.swift in Sources */,
 				FBD3EE3C1DDC136100B9F203 /* AppDelegate.swift in Sources */,
+				A4DDFBC31DF5D1F5008175E0 /* ColonyTableViewCell.swift in Sources */,
 				FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */,
+				A4DDFBC01DF5D1B9008175E0 /* CreationViewController.swift in Sources */,
 				FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */,
+				A4DDFBC11DF5D1B9008175E0 /* MasterViewController.swift in Sources */,
 				A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */,
 				A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */,
 				FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */,
