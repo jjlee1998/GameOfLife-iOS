@@ -2,36 +2,31 @@
 //  CreationViewController.swift
 //  GameOfLife-iOS
 //
-//  Created by Cameron Martin on 11/20/16.
+//  Created by Cameron Martin on 12/4/16.
 //  Copyright © 2016 Jonathan J. Lee. All rights reserved.
 //
 
 import UIKit
 
-class CreationViewController: UIViewController {
+class CreationViewController: UIViewController, UITextFieldDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var sizeField: UITextField!
+    @IBOutlet var templateSelector: UISegmentedControl!
+    @IBOutlet var saveButton: UIButton!
+    
+    var colony: Colony?
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBOutlet var backButton: UIButton!
-    @IBOutlet var createColonyButton: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowColony" {
-            //pass created colony to the colony view
-            print("moving to colony screen")
-        }
-        
-        if segue.identifier == "ReturnToMain" {
-            //go to main menu screen, save colony, update main menu table of colonies if necessary
-            print("returning to main screen")
-        }
+        let name = nameField?.text
+        let size = sizeField?.text
+            
+        colony = Colony(name: name!, size: Int(size!)!)
     }
+    
 }

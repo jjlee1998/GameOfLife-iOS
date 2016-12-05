@@ -95,6 +95,6 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     }
     
     override func viewDidLoad() {
-        currentColony = Colony(name: "Default", size: 60)
+        currentColony = Colony(name: "blankColony", size: 80)
     }
 }

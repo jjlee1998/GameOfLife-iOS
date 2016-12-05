@@ -19,18 +19,18 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         //testing colonies go here until creation gets built
-        let c0 = Colony(name: "Colony 0", size: 60)
+        /*let c0 = Colony(name: "Colony 0", size: 60)
         c0.randomize()
         
-        let c1 = Colony(name: "Colony 1", size: 60)
+        let c1 = Colony(name: "Colony 1", size: 40)
         c1.randomize()
         
-        let c2 = Colony(name: "Colony 2", size: 60)
+        let c2 = Colony(name: "Colony 2", size: 20)
         c2.randomize()
         
         colonies.append(c0)
         colonies.append(c1)
-        colonies.append(c2)
+        colonies.append(c2)*/
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,11 +47,23 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ColonyTableViewCell", for: indexPath as IndexPath) as! ColonyTableViewCell
         
             let colony = self.colonies[indexPath.row]
-            cell.textLabel?.text = colony.name
+            cell.nameLabel?.text = colony.name
+            cell.sizeLabel?.text = "\(colony.size)x\(colony.size)"
         
             return cell
+    }
+    
+    @IBAction func unwindToColonyList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? CreationViewController {
+            let colony = sourceViewController.colony
+            let newIndexPath = IndexPath(row: colonies.count, section: 0)
+            colonies.append(colony!)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            
+            self.delegate?.colonySelected(newColony: colony!)
+        }
     }
 }

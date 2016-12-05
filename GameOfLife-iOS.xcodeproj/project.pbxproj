@@ -24,9 +24,9 @@
 /* Begin PBXFileReference section */
 		A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A468DB5E1DECA07600B3B5DE /* ColonyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyView.swift; sourceTree = "<group>"; };
-		A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreationViewController.swift; path = ../../../CreationViewController.swift; sourceTree = "<group>"; };
-		A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = ../../../MasterViewController.swift; sourceTree = "<group>"; };
-		A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColonyTableViewCell.swift; path = ../../../ColonyTableViewCell.swift; sourceTree = "<group>"; };
+		A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyTableViewCell.swift; sourceTree = "<group>"; };
 		FB49F8E51DEE672200FC5002 /* Colony.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		FB49F8E71DEE673900FC5002 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyViewTouchHandling.swift; sourceTree = "<group>"; };
