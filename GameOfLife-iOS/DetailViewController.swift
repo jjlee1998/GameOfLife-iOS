@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     @IBOutlet var generationNumberLabel: UILabel!
     @IBOutlet var slider: UISlider!
     @IBOutlet var evolveRateLabel: UILabel!
+    @IBOutlet var wrappingSwitch: UISwitch!
     
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
@@ -38,6 +39,7 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
             colonyView.setColony(currentColony)
             colonyNameLabel.text = currentColony.name
             generationNumberLabel.text = currentColony.generationNumber.description
+            currentColony.wrapping = wrappingSwitch.isOn
         }
     }
     
@@ -74,7 +76,7 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     // One of the timer tasks is for the timer to replace itself it the interval has changed
     @IBAction func changeTimerInterval(_ sender: AnyObject) {
         let value = Double((sender as! UISlider).value)
-        timerInterval = value
+        timerInterval = pow(10.0, value)
     }
     
     @IBAction func toggleWrapping(_ sender: AnyObject) {
