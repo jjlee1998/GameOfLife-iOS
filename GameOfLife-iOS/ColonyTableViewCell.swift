@@ -10,7 +10,6 @@ import UIKit
 
 class ColonyTableViewCell: UITableViewCell {
     
-    
     @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet var sizeLabel: UILabel!
