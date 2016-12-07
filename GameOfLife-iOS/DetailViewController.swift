@@ -73,8 +73,8 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     
     // One of the timer tasks is for the timer to replace itself it the interval has changed
     @IBAction func changeTimerInterval(_ sender: AnyObject) {
-        let newInterval = Double((sender as! UISlider).value)
-        timerInterval = newInterval
+        let value = Double((sender as! UISlider).value)
+        timerInterval = value
     }
     
     @IBAction func toggleWrapping(_ sender: AnyObject) {
@@ -95,6 +95,6 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     }
     
     override func viewDidLoad() {
-        currentColony = Colony(name: "blankColony", size: 80)
+        currentColony = Colony(name: "Default", size: 60)
     }
 }
