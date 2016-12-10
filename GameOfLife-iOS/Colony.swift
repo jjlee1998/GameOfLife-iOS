@@ -12,13 +12,27 @@ class Colony: CustomStringConvertible {
     
     var name: String
     var size: Int
+    var center: Int
     var livingCells = Set<Cell>()
     var generationNumber = 0
     var wrapping = false
     
-    init(name: String, size: Int) {
+    init(name: String, size: Int, template: Int) {
         self.name = name
         self.size = size
+        self.center = size / 2
+        
+        switch(template) {
+        case 0: () //blank colony
+        case 1: createBasicTemplate()
+        case 2: createGliderGunTemplate()
+        case 3: randomize()
+        default: ()
+        }
+    }
+    
+    convenience init(name: String, size: Int) {
+        self.init(name: name, size: size, template: 0)
     }
     
     func isGoodCell(_ cell: Cell) -> Bool {
@@ -120,6 +134,47 @@ class Colony: CustomStringConvertible {
                 }
                 add = (arc4random_uniform(2) == 1)
             }
+        }
+    }
+    
+    func createBasicTemplate() {
+        if (size < 5) {
+            size = 5
+            center = size / 2
+        }
+        
+        let cells = [(center, center), (center - 1, center), (center + 1, center), (center, center - 1)]
+        
+        for c in cells {
+            setCellAlive(c.0, c.1)
+        }
+    }
+    
+    func createGliderTemplate() {
+        if (size < 10) {
+            size = 10
+            center = size / 2
+        }
+        
+        let cells = [(center + 1, center + 1), (center - 1, center), (center + 1, center), (center, center - 1), (center + 1, center - 1)]
+        
+        for c in cells {
+            setCellAlive(c.0, c.1)
+        }
+    }
+    
+    func createGliderGunTemplate() {
+        if (size < 40) {
+            size = 40
+            center = size / 2
+        }
+        
+        let c = center
+        
+        let cells = [(c, c), (c - 1, c), (c - 1, c + 1), (c - 1, c - 1), (c - 2, c + 2), (c - 2, c - 2), (c - 4, c + 3), (c - 4, c - 3), (c - 5, c + 3), (c - 5, c - 3), (c - 6, c - 2), (c - 6, c + 2), (c - 7, c + 1), (c - 7, c - 1), (c - 7, c), (c - 3, c), (c - 16, c), (c - 17, c), (c - 17, c - 1), (c - 16, c - 1), (c + 3, c + 1), (c + 3, c + 2), (c + 3, c + 3), (c + 4, c + 1), (c + 4, c + 2), (c + 4, c + 3), (c + 5, c + 4), (c + 5, c + 0), (c + 7, c + 5), (c + 7, c + 4), (c + 7, c + 0), (c + 7, c - 1), (c + 17, c + 2), (c + 17, c + 3), (c + 18, c + 2), (c + 18, c + 3)]
+        
+        for cell in cells {
+            setCellAlive(cell.0, cell.1)
         }
     }
     

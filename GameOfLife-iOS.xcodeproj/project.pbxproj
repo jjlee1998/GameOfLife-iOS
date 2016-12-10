@@ -12,7 +12,6 @@
 		A4DDFBC01DF5D1B9008175E0 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */; };
 		A4DDFBC11DF5D1B9008175E0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */; };
 		A4DDFBC31DF5D1F5008175E0 /* ColonyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */; };
-		A4DDFBC51DF5D9D1008175E0 /* ColonyTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBC41DF5D9D1008175E0 /* ColonyTemplates.swift */; };
 		FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E51DEE672200FC5002 /* Colony.swift */; };
 		FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E71DEE673900FC5002 /* Cell.swift */; };
 		FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */; };
@@ -28,7 +27,6 @@
 		A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyTableViewCell.swift; sourceTree = "<group>"; };
-		A4DDFBC41DF5D9D1008175E0 /* ColonyTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyTemplates.swift; sourceTree = "<group>"; };
 		FB49F8E51DEE672200FC5002 /* Colony.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		FB49F8E71DEE673900FC5002 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyViewTouchHandling.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A468DB5E1DECA07600B3B5DE /* ColonyView.swift */,
 				FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */,
-				A4DDFBC41DF5D9D1008175E0 /* ColonyTemplates.swift */,
 				FB49F8E51DEE672200FC5002 /* Colony.swift */,
 				FB49F8E71DEE673900FC5002 /* Cell.swift */,
 				FBD3EE421DDC136100B9F203 /* Assets.xcassets */,
@@ -165,7 +162,6 @@
 				FB49F8E61DEE672200FC5002 /* Colony.swift in Sources */,
 				A4DDFBC01DF5D1B9008175E0 /* CreationViewController.swift in Sources */,
 				FB49F8EA1DEE948200FC5002 /* ColonyViewTouchHandling.swift in Sources */,
-				A4DDFBC51DF5D9D1008175E0 /* ColonyTemplates.swift in Sources */,
 				A4DDFBC11DF5D1B9008175E0 /* MasterViewController.swift in Sources */,
 				A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */,
 				A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */,

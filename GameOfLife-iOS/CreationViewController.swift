@@ -26,7 +26,7 @@ class CreationViewController: UIViewController, UITextFieldDelegate {
         let name = nameField?.text
         let size = sizeField?.text
             
-        colony = Colony(name: name!, size: Int(size!)!)
+        colony = Colony(name: name!, size: Int(size!)!, template: templateSelector.selectedSegmentIndex)
     }
     
 }
