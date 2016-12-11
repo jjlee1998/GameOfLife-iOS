@@ -22,6 +22,15 @@ class CreationViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if ((string.rangeOfCharacter(from: NSCharacterSet.punctuationCharacters) != nil) || string.rangeOfCharacter(from: NSCharacterSet.letters) != nil) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let name = nameField?.text
         let size = sizeField?.text
