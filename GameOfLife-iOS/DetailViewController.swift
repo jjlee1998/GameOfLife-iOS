@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, ColonySelectionDelegate {
     
-    @IBOutlet var colonyView: ColonyView! // Use this view controller to build the controls and colony view
+    @IBOutlet var colonyView: ColonyView!
     @IBOutlet var evolutionButton: UIButton!
     @IBOutlet var colonyNameLabel: UILabel!
     @IBOutlet var generationNumberLabel: UILabel!
@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     @IBOutlet var evolveRateLabel: UILabel!
     @IBOutlet var wrappingSwitch: UISwitch!
     
-    let numberFormatter: NumberFormatter = {
+    let numberFormatter: NumberFormatter = { // Rounds the "rate of evolution" display to 2 decimals
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         nf.minimumFractionDigits = 2
@@ -26,20 +26,21 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
         return nf
     }()
     
-    var timer: Timer?
-    var evolveOn = false
-    var timerInterval: Double = 1.0 {
-        didSet {
-            evolveRateLabel.text = "\(numberFormatter.string(from: NSNumber(value: timerInterval))!) s"
-        }
-    }
-    
     var currentColony: Colony! {
         didSet {
             colonyView.setColony(currentColony)
             colonyNameLabel.text = currentColony.name
             generationNumberLabel.text = currentColony.generationNumber.description
             currentColony.wrapping = wrappingSwitch.isOn
+        }
+    }
+    
+    var evolveOn = false
+    
+    var timer: Timer?
+    var timerInterval: Double = 1.0 {
+        didSet {
+            evolveRateLabel.text = "\(numberFormatter.string(from: NSNumber(value: timerInterval))!) s"
         }
     }
     
@@ -59,7 +60,6 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
 
     @IBAction func toggleEvolution(_ sender: AnyObject) {
         let button = sender as! UIButton
-        
         if !evolveOn {
             evolveOn = true
             timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(DetailViewController.timerTasks), userInfo: nil, repeats: true)
