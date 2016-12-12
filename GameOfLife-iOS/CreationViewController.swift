@@ -58,7 +58,7 @@ class CreationViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField == sizeField && string.rangeOfCharacter(from: CharacterSet(charactersIn: "0123456789")) == nil {
+        if textField == sizeField && (string != "" && string.rangeOfCharacter(from: CharacterSet(charactersIn: "0123456789")) == nil) {
             return false
         } else {
             if textField.backgroundColor != UIColor.white {
