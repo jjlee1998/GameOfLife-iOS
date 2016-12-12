@@ -12,28 +12,26 @@ class ColonyStore {
     
     var colonies = [Colony]()
     
-    func createItem(colony: Colony) -> Colony {
+    func createColony(colony: Colony) {
         let newColony = colony
         
         colonies.append(newColony)
-        
-        return newColony
     }
     
-    func removeItem(_ colony: Colony) {
+    func removeColony(_ colony: Colony) {
         if let index = colonies.index(of: colony) {
             colonies.remove(at: index)
         }
     }
     
-    func moveItemAtIndex(_ fromIndex: Int, toIndex: Int) {
+    func moveColonyAtIndex(_ fromIndex: Int, toIndex: Int) {
         if fromIndex == toIndex {
             return
         }
         
-        let movedItem = colonies[fromIndex]
+        let movedColony = colonies[fromIndex]
         colonies.remove(at: fromIndex)
-        colonies.insert(movedItem, at: toIndex)
+        colonies.insert(movedColony, at: toIndex)
     }
     
     init() {

@@ -44,7 +44,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        colonyStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        colonyStore.moveColonyAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -60,7 +60,7 @@ class MasterViewController: UITableViewController {
             ac.addAction(cancelAction)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
-                self.colonyStore.removeItem(colony)
+                self.colonyStore.removeColony(colony)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.delegate?.handleColonyDeletion(deletedColony: colony)
             })
@@ -74,14 +74,14 @@ class MasterViewController: UITableViewController {
     }
 
     
-    @IBAction func toggleEditingMode(_ sender: AnyObject) {
+    @IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
         
         if isEditing {
             setEditing(false, animated: true)
-            editButton.title = Optional("Edit")
+            //editButton.title = Optional("Edit")
         } else {
             setEditing(true, animated: true)
-            editButton.title = Optional("Done")
+            //editButton.title = Optional("Done")
         }
         
     }
@@ -90,7 +90,7 @@ class MasterViewController: UITableViewController {
         if let sourceViewController = sender.source as? CreationViewController {
             let colony = sourceViewController.colony
             let newIndexPath = IndexPath(row: colonyStore.colonies.count, section: 0)
-            colonyStore.createItem(colony: colony!)
+            colonyStore.createColony(colony: colony!)
             tableView.insertRows(at: [newIndexPath], with: .bottom)
             
             self.delegate?.colonySelected(newColony: colony!)
