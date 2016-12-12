@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ColonySelectionDelegate: class {
-    func colonySelected(newColony: Colony)
+    func colonySelected(newColony: Colony?)
+    func handleColonyDeletion(deletedColony: Colony)
 }
 
 class MasterViewController: UITableViewController {
@@ -18,10 +19,6 @@ class MasterViewController: UITableViewController {
     
     var colonyStore: ColonyStore!
     var delegate: ColonySelectionDelegate?
-    
-    override func viewDidLoad() {
-
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -55,7 +52,7 @@ class MasterViewController: UITableViewController {
             let colony = colonyStore.colonies[indexPath.row]
             
             let title = "Delete \(colony.name)?"
-            let message = "Are you sure you want to delete this item?"
+            let message = "Are you sure you want to delete this colony?"
             
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             
@@ -65,6 +62,7 @@ class MasterViewController: UITableViewController {
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
                 self.colonyStore.removeItem(colony)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.delegate?.handleColonyDeletion(deletedColony: colony)
             })
             ac.addAction(deleteAction)
             
@@ -80,8 +78,10 @@ class MasterViewController: UITableViewController {
         
         if isEditing {
             setEditing(false, animated: true)
+            editButton.title = Optional("Edit")
         } else {
             setEditing(true, animated: true)
+            editButton.title = Optional("Done")
         }
         
     }

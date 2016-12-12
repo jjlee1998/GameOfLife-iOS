@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-SF-QOO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7j-SF-QOO">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -62,13 +62,23 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text="No colony currently loaded.  Select or create one from the panel to the left." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-Pn-3gm">
+                                                        <rect key="frame" x="100" y="213" width="316.5" height="90"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="GUB-Pn-3gm" firstAttribute="width" secondItem="N5C-VX-Spd" secondAttribute="width" constant="-200" id="5ZF-83-mmG"/>
                                                     <constraint firstAttribute="width" secondItem="N5C-VX-Spd" secondAttribute="height" multiplier="1:1" id="5ov-Mo-jPC"/>
+                                                    <constraint firstItem="GUB-Pn-3gm" firstAttribute="centerY" secondItem="N5C-VX-Spd" secondAttribute="centerY" id="BgE-Gi-B8V"/>
+                                                    <constraint firstItem="GUB-Pn-3gm" firstAttribute="centerX" secondItem="N5C-VX-Spd" secondAttribute="centerX" id="gr1-1w-2l4"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="coordinatePopup" destination="VoE-cw-aVM" id="2TN-au-dF8"/>
+                                                    <outlet property="noColonyMessage" destination="GUB-Pn-3gm" id="cD4-1J-uHO"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -177,18 +187,18 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YS3-DE-juF" id="zr0-cr-URc">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPN-rT-4je">
-                                            <rect key="frame" x="15" y="12" width="45" height="20.5"/>
+                                            <rect key="frame" x="15" y="11" width="45" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="87G-7U-dcB">
-                                            <rect key="frame" x="261" y="12" width="44" height="20.5"/>
+                                            <rect key="frame" x="261" y="11" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -220,7 +230,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editButton" destination="8Ws-gy-bL0" id="eqE-Ua-h5c"/>
+                        <outlet property="editButton" destination="8Ws-gy-bL0" id="Xlv-kL-NbT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3N-Zu-44K" userLabel="First Responder" sceneMemberID="firstResponder"/>

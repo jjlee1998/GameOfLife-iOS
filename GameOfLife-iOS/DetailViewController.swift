@@ -26,12 +26,17 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
         return nf
     }()
     
-    var currentColony: Colony! {
+    var currentColony: Colony? = nil {
         didSet {
             colonyView.selectColony(currentColony)
-            colonyNameLabel.text = currentColony.name
-            generationNumberLabel.text = currentColony.generationNumber.description
-            currentColony.wrapping = wrappingSwitch.isOn
+            if currentColony != nil {
+                colonyNameLabel.text = currentColony!.name
+                generationNumberLabel.text = currentColony!.generationNumber.description
+                currentColony!.wrapping = wrappingSwitch.isOn
+            } else {
+                colonyNameLabel.text = ""
+                generationNumberLabel.text = ""
+            }
         }
     }
     
@@ -49,27 +54,29 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     }
     
     func timerTasks() {
-        currentColony.evolve()
+        currentColony!.evolve()
         colonyView.setNeedsDisplay()
-        generationNumberLabel.text = currentColony.generationNumber.description
+        generationNumberLabel.text = currentColony!.generationNumber.description
         if timer!.timeInterval != timerInterval {
             timer!.invalidate()
             startTimer()
         }
     }
-
+    
     @IBAction func toggleEvolution(_ sender: AnyObject) {
-        let button = sender as! UIButton
-        if !evolveOn {
-            evolveOn = true
-            timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(DetailViewController.timerTasks), userInfo: nil, repeats: true)
-            button.setTitle("Stop Evolving", for: .normal)
-            button.setTitleColor(UIColor.red, for: .normal)
-        } else {
-            timer!.invalidate()
-            evolveOn = false
-            button.setTitle("Start Evolving", for: .normal)
-            button.setTitleColor(UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0), for: .normal)
+        if currentColony != nil {
+            let button = sender as! UIButton
+            if !evolveOn {
+                evolveOn = true
+                timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(DetailViewController.timerTasks), userInfo: nil, repeats: true)
+                button.setTitle("Stop Evolving", for: .normal)
+                button.setTitleColor(UIColor.red, for: .normal)
+            } else {
+                timer!.invalidate()
+                evolveOn = false
+                button.setTitle("Start Evolving", for: .normal)
+                button.setTitleColor(UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0), for: .normal)
+            }
         }
     }
     
@@ -80,23 +87,28 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     }
     
     @IBAction func toggleWrapping(_ sender: AnyObject) {
-        let wrapSwitch = sender as! UISwitch
-        if wrapSwitch.isOn {
-            currentColony.wrappingOn()
-        } else {
-            currentColony.wrappingOff()
+        if currentColony != nil {
+            let wrapSwitch = sender as! UISwitch
+            if wrapSwitch.isOn {
+                currentColony!.wrappingOn()
+            } else {
+                currentColony!.wrappingOff()
+            }
         }
     }
     
     
-    func colonySelected(newColony: Colony) {
-        currentColony = newColony
+    func colonySelected(newColony: Colony?) {
         if evolveOn {
             toggleEvolution(evolutionButton)
         }
+        currentColony = newColony
     }
     
-    override func viewDidLoad() {
-        currentColony = Colony(name: "Default", size: 60)
+    func handleColonyDeletion(deletedColony: Colony) {
+        if currentColony != nil && deletedColony == currentColony! {
+            colonySelected(newColony: nil)
+        }
     }
 }
+

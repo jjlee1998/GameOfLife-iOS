@@ -70,13 +70,13 @@
 		FBD3EE3A1DDC136100B9F203 /* GameOfLife-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */,
+				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
+				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */,
+				A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */,
 				A4A2865A1DFE4244007DE871 /* ColonyStore.swift */,
 				A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */,
-				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
 				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
-				FBD3EE3F1DDC136100B9F203 /* Main.storyboard */,
 				A468DB5E1DECA07600B3B5DE /* ColonyView.swift */,
 				FB49F8E91DEE948200FC5002 /* ColonyViewTouchHandling.swift */,
 				FB49F8E51DEE672200FC5002 /* Colony.swift */,
