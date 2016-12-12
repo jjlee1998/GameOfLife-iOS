@@ -110,5 +110,9 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
             colonySelected(newColony: nil)
         }
     }
+    
+    override func viewDidLoad() {
+        colonySelected(newColony: nil)
+    }
 }
 

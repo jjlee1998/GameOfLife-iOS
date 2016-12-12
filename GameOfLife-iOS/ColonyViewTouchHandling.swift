@@ -18,47 +18,51 @@ extension ColonyView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self)
-        let cell = toColonyCell(location)
-        
-        if colony!.isGoodCell(cell) {
-            coordinatePopup.center = CGPoint(x: location.x, y: location.y - (2 * multiplier))
-            coordinatePopup.isHidden = false
-            coordinatePopup.text = "[\(cell.x), \(cell.y)]"
-        } else {
-            coordinatePopup.isHidden = true
+        if colony != nil {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            let cell = toColonyCell(location)
+            
+            if colony!.isGoodCell(cell) {
+                coordinatePopup.center = CGPoint(x: location.x, y: location.y - (2 * multiplier))
+                coordinatePopup.isHidden = false
+                coordinatePopup.text = "[\(cell.x), \(cell.y)]"
+            } else {
+                coordinatePopup.isHidden = true
+            }
+            
+            if colony!.isCellAlive(cell.x, cell.y) {
+                colony!.setCellDead(cell.x, cell.y)
+                drawAlive = false
+            } else {
+                colony!.setCellAlive(cell.x, cell.y)
+                drawAlive = true
+            }
+            setNeedsDisplay()
         }
-        
-        if colony!.isCellAlive(cell.x, cell.y) {
-            colony!.setCellDead(cell.x, cell.y)
-            drawAlive = false
-        } else {
-            colony!.setCellAlive(cell.x, cell.y)
-            drawAlive = true
-        }
-        setNeedsDisplay()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self)
-        let cell = toColonyCell(location)
-        
-        if colony!.isGoodCell(cell) {
-            coordinatePopup.center = CGPoint(x: location.x, y: location.y - (2 * multiplier))
-            coordinatePopup.isHidden = false
-            coordinatePopup.text = "[\(cell.x), \(cell.y)]"
-        } else {
-            coordinatePopup.isHidden = true
+        if colony != nil {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            let cell = toColonyCell(location)
+            
+            if colony!.isGoodCell(cell) {
+                coordinatePopup.center = CGPoint(x: location.x, y: location.y - (2 * multiplier))
+                coordinatePopup.isHidden = false
+                coordinatePopup.text = "[\(cell.x), \(cell.y)]"
+            } else {
+                coordinatePopup.isHidden = true
+            }
+            
+            if drawAlive {
+                colony!.setCellAlive(cell.x, cell.y)
+            } else {
+                colony!.setCellDead(cell.x, cell.y)
+            }
+            setNeedsDisplay()
         }
-        
-        if drawAlive {
-            colony!.setCellAlive(cell.x, cell.y)
-        } else {
-            colony!.setCellDead(cell.x, cell.y)
-        }
-        setNeedsDisplay()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
