@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */; };
 		A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468DB5E1DECA07600B3B5DE /* ColonyView.swift */; };
+		A4A2865B1DFE4244007DE871 /* ColonyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2865A1DFE4244007DE871 /* ColonyStore.swift */; };
 		A4DDFBC01DF5D1B9008175E0 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */; };
 		A4DDFBC11DF5D1B9008175E0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */; };
 		A4DDFBC31DF5D1F5008175E0 /* ColonyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A468DB5E1DECA07600B3B5DE /* ColonyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyView.swift; sourceTree = "<group>"; };
+		A4A2865A1DFE4244007DE871 /* ColonyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyStore.swift; sourceTree = "<group>"; };
 		A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonyTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				A4DDFBBE1DF5D1B9008175E0 /* CreationViewController.swift */,
 				A4DDFBBF1DF5D1B9008175E0 /* MasterViewController.swift */,
+				A4A2865A1DFE4244007DE871 /* ColonyStore.swift */,
 				A4DDFBC21DF5D1F5008175E0 /* ColonyTableViewCell.swift */,
 				FBD3EE3B1DDC136100B9F203 /* AppDelegate.swift */,
 				A468DB4E1DEB527D00B3B5DE /* DetailViewController.swift */,
@@ -166,6 +169,7 @@
 				A468DB5F1DECA07600B3B5DE /* ColonyView.swift in Sources */,
 				A468DB4F1DEB527D00B3B5DE /* DetailViewController.swift in Sources */,
 				FB49F8E81DEE673900FC5002 /* Cell.swift in Sources */,
+				A4A2865B1DFE4244007DE871 /* ColonyStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

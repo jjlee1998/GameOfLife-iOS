@@ -36,7 +36,7 @@ class DetailViewController: UIViewController, ColonySelectionDelegate {
     
     var currentColony: Colony! {
         didSet {
-            colonyView.setColony(currentColony)
+            colonyView.selectColony(currentColony)
             colonyNameLabel.text = currentColony.name
             generationNumberLabel.text = currentColony.generationNumber.description
             currentColony.wrapping = wrappingSwitch.isOn

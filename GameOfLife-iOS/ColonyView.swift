@@ -17,7 +17,7 @@ class ColonyView: UIView {
     var multiplier: CGFloat!
     var drawAlive = true
     
-    func setColony(_ colony: Colony) {
+    func selectColony(_ colony: Colony) {
         self.colony = colony
         self.setNeedsDisplay()
     }

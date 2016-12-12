@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
@@ -22,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let detailViewController = splitViewController.viewControllers.last as! DetailViewController
         
         masterViewController.delegate = detailViewController
+        
+        let colonyStore = ColonyStore()
+        
+        masterViewController.colonyStore = colonyStore
+
         return true
     }
 

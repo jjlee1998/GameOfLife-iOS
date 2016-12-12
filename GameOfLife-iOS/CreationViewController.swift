@@ -43,7 +43,7 @@ class CreationViewController: UIViewController, UITextFieldDelegate {
         case 1:
             templateDescriptionLabel.text = "Basic: evolves into a quartet of oscillating bars."
         case 2:
-            templateDescriptionLabel.text = "Glider Gun: continually shoots out gliders. Minimum size is 40; will automatically increase size to 40 if you set a lesser value."
+            templateDescriptionLabel.text = "Glider Gun: continually shoots out gliders. Minimum size is 40; will automatically increase size to 40 to fit if you set a lesser value."
         case 3:
             templateDescriptionLabel.text = "Random: every cell is randomly set to alive or dead."
         default:

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Colony: CustomStringConvertible {
+class Colony: NSObject {
     
     var name: String
     var size: Int
@@ -21,6 +21,8 @@ class Colony: CustomStringConvertible {
         self.name = name
         self.size = size
         self.center = size / 2
+        
+        super.init()
         
         switch(template) {
         case 0: () //blank colony
@@ -178,7 +180,7 @@ class Colony: CustomStringConvertible {
         }
     }
     
-    var description: String {
+    override var description: String {
         var result = "Generation # \(generationNumber)\n"
         for xCoor in -1...size {
             for yCoor in -1...size {

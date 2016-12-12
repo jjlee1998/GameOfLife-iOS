@@ -14,23 +14,13 @@ protocol ColonySelectionDelegate: class {
 
 class MasterViewController: UITableViewController {
     
-    var colonies = [Colony]()
+    @IBOutlet var editButton: UIBarButtonItem!
+    
+    var colonyStore: ColonyStore!
     var delegate: ColonySelectionDelegate?
     
     override func viewDidLoad() {
-        //testing colonies go here until creation gets built
-        /*let c0 = Colony(name: "Colony 0", size: 60)
-        c0.randomize()
-        
-        let c1 = Colony(name: "Colony 1", size: 40)
-        c1.randomize()
-        
-        let c2 = Colony(name: "Colony 2", size: 20)
-        c2.randomize()
-        
-        colonies.append(c0)
-        colonies.append(c1)
-        colonies.append(c2)*/
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,29 +28,69 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.colonies.count
+        return self.colonyStore.colonies.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let colony = self.colonies[indexPath.row]
+        let colony = self.colonyStore.colonies[indexPath.row]
         self.delegate?.colonySelected(newColony: colony)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ColonyTableViewCell", for: indexPath as IndexPath) as! ColonyTableViewCell
         
-            let colony = self.colonies[indexPath.row]
+            let colony = self.colonyStore.colonies[indexPath.row]
             cell.nameLabel?.text = colony.name
             cell.sizeLabel?.text = "\(colony.size)x\(colony.size)"
         
             return cell
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        colonyStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let colony = colonyStore.colonies[indexPath.row]
+            
+            let title = "Delete \(colony.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+                self.colonyStore.removeItem(colony)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            })
+            ac.addAction(deleteAction)
+            
+            let popoverPresentationController = ac.popoverPresentationController
+            popoverPresentationController?.barButtonItem = editButton
+            
+            present(ac, animated: true, completion: nil)
+        }
+    }
+
+    
+    @IBAction func toggleEditingMode(_ sender: AnyObject) {
+        
+        if isEditing {
+            setEditing(false, animated: true)
+        } else {
+            setEditing(true, animated: true)
+        }
+        
+    }
+    
     @IBAction func unwindToColonyList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? CreationViewController {
             let colony = sourceViewController.colony
-            let newIndexPath = IndexPath(row: colonies.count, section: 0)
-            colonies.append(colony!)
+            let newIndexPath = IndexPath(row: colonyStore.colonies.count, section: 0)
+            colonyStore.createItem(colony: colony!)
             tableView.insertRows(at: [newIndexPath], with: .bottom)
             
             self.delegate?.colonySelected(newColony: colony!)
